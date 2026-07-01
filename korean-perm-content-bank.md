@@ -1,8 +1,8 @@
 # Корейская (цифровая) завивка — банк контента для коротких видео
 
 Полный рабочий документ: концепция героя, банк сюжетов по 4 техникам, покадровая
-раскадровка под генерацию видео, промпты для сценариев и удержания персонажа,
-план первой партии роликов.
+раскадровка, промпт-шаблоны из курса (генерация идей + Seedance 2.0), готовые
+применённые Seedance-промпты, промпт удержания персонажа и план первой партии.
 
 Формат: reels / shorts, жанр «гламур vs реальность», ключевой приём — контраст
 идеальных мягких локонов и того, что происходит на самом деле.
@@ -117,42 +117,28 @@
   фоне окна, ветер красиво играет локонами. Вентилятор в салоне ловит один локон —
   и вся укладка начинает жить своей жизнью, закручиваясь в одну сторону. Она
   пытается сохранить позу, локон медленно поднимается вверх. (Раскадрован в
-  разделе 3.)
+  разделе 3, готовый Seedance-промпт — в разделе 5.1.)
 
 ---
 
 ## 3. Покадровая раскадровка — «Слишком идеально»
 
-Выбран как флагманский ролик: самый сильный физический гэг (локон живёт своей
-жизнью), а динамичное движение лучше всего вытягивают Kling и Sora.
+Флагманский ролик: самый сильный физический гэг (локон живёт своей жизнью), а
+динамичное движение лучше всего вытягивают Kling / Sora / Seedance.
 
 Формат: 4 шота по 5 сек (модели генерят стабильно короткими кусками, потом
-склейка). Для каждого кадра — промпт на английском (точнее держит стиль), плюс
-камера, свет и звук.
+склейка).
 
 ### Шот 1 — Идеальная эстетика (5 сек)
 **Действие:** героиня стоит у панорамного окна салона, мягкий свет, поправляет
 корейские локоны, лёгкая довольная улыбка «в кадр».
 **Camera:** slow push-in, eye level, shallow depth of field.
-**Prompt:**
-> Cinematic beauty vlog shot. A 27-year-old elegant Korean-styled woman with soft,
-> glossy hollywood-wave curls stands by a large studio window, warm golden hour
-> light backlighting her hair, dust particles floating. She gently touches her
-> curls and gives a subtle confident smile to camera. Slow push-in, 35mm, shallow
-> depth of field, warm pastel tones, film grain.
-
 **Звук:** мягкий lo-fi бит, «эстетичный» ASMR-шелест волос.
 
 ### Шот 2 — Первый сбой (5 сек)
 **Действие:** в кадр незаметно попадает напольный вентилятор. Один локон ловит
 поток и начинает медленно подниматься вбок — героиня ещё улыбается, не замечая.
 **Camera:** static medium shot, focus stays on face, curl moves in frame edge.
-**Prompt:**
-> Same woman, same studio. A floor fan in the corner starts turning. One single
-> curl on the side of her head slowly lifts and floats sideways in the air stream,
-> while she keeps smiling at camera, unaware. Static medium shot, warm light,
-> subtle comedic timing, natural hair physics, realistic motion.
-
 **Звук:** бит продолжается, тихо добавляется нарастающий «вжжж» вентилятора.
 
 ### Шот 3 — Эскалация (5 сек)
@@ -160,55 +146,270 @@
 вверх. Героиня застывает в позе, глаза скошены на волосы, старается сохранить
 лицо «всё нормально».
 **Camera:** slight zoom-in on face, then tilt up to hair.
-**Prompt:**
-> The woman's curls now dramatically swirl and rise upward in one direction,
-> defying gravity, forming a comical spiral. She freezes holding her pose, eyes
-> darting nervously toward her hair, forced calm expression, trying not to break
-> character. Camera tilts up from face to floating hair, warm tones, exaggerated
-> but realistic hair motion, comedic tension.
-
 **Звук:** музыка резко обрывается на долю секунды (comedic beat drop).
 
 ### Шот 4 — Панчлайн (5 сек)
 **Действие:** героиня медленно поднимает руку, придавливает локон обратно — он
 тут же выскакивает снова. Смотрит в камеру с лицом «ну и ладно», кривая улыбка.
 **Camera:** locked medium shot, punchline framing.
-**Prompt:**
-> The woman slowly raises her hand and presses the floating curl back down — it
-> instantly springs back up the moment she lets go. She looks straight into camera
-> with a resigned, self-ironic half-smile and a small shrug. Locked medium shot,
-> warm light, deadpan comedic expression, final punchline framing.
-
 **Подпись на видео:** «Корейская завивка: держится даже против законов физики 😐»
 **Звук:** «пружинный» звук boing на выскакивании локона + смайл-бит.
 
 ---
 
-## 4. Промпт на удержание персонажа
+## 4. Промпт-шаблоны из курса
 
-Прогнать **один раз** отдельно, зафиксировать seed / reference-изображение и
-подставлять описание в начало каждого шота — так лицо и волосы не будут меняться
-между сценами.
+### 4.1 Промпт для генерации идей (Клод)
 
-> **Character reference (keep consistent across all scenes):**
-> A 27-year-old woman, soft oval face, warm ivory skin, natural light makeup with
-> glossy lips, expressive dark brown almond eyes, subtle self-ironic expression.
-> Hair: shoulder-length soft Korean-style "hollywood waves", warm chocolate-brown
-> with a glossy healthy shine, voluminous rounded curls framing the face. Wearing a
-> cream oversized knit sweater. Style: clean girly aesthetic, warm pastel palette.
-> **Consistency rules:** same face shape, same hair color and curl pattern, same
-> outfit and lighting temperature in every shot. Only her expression and the hair
-> motion change between scenes. Photorealistic, cinematic, 35mm film look.
+Загружаешь картинку с персонажами и пишешь промпт:
 
-**Практический совет:** в Kling используйте один и тот же reference-кадр из
-Шота 1 как «Face Reference» для остальных трёх — это надёжнее, чем полагаться
-только на текстовое описание.
+> Ты эксперт по созданию коротких клипов-мультов в экшн-формате. Напиши мне 10
+> лучших идей для сценария с участием этих персонажей. Цель — в конце чтобы человек
+> захотел написать кодовое слово **КАДР**, чтобы научиться создавать нейро-видео и
+> зарабатывать.
+
+### 4.2 Промпт в Клод для генерации промпта Seedance 2.0
+
+> Ты эксперт по созданию промптов для AI-видео-генератора **Seedance 2.0**. Напиши
+> промпт для этой идеи (описываешь идею и цель ролика). Изучи эти правила перед тем
+> как помогать пользователю.
+>
+> Пиши с русской озвучкой, перед репликой указывай, что говорит по-русски, без
+> акцента. Не делай длинную речь, лучше короткие простые реплики. Динамичные сцены,
+> хук с первой секунды. Если используешь показ банковского счёта, то сумма в рублях.
+> Серии полностью для русской аудитории — используй российские тексты, рубли,
+> менталитет, сленг. Расставь ударения в русской озвучке, чтоб понимала нейросеть
+> Seedance 2.0. И добавь перед речью эмоцию, с какой говорит персонаж.
+
+### 4.3 Правила написания промптов для Seedance 2.0
+
+**[Система референсов]**
+- Все загружаемые файлы тегируются: `@Image1`, `@Image2`, `@Video1`, `@Audio1` и т.д.
+- Максимум **9 изображений + 3 видео + 3 аудио** файла.
+- Каждый тег нужно явно описать в начале промпта — что это и как использовать.
+- Пример: `@Image1 — exact face and body reference for the main character`.
+- Если загружается видео как основа — пишем:
+  `Replicate every shot, camera angle, movement and transition from @Video1 exactly`.
+- Всегда описывай внешность детально: причёска, черты лица, телосложение.
+- Обязательно добавляй:
+  `Preserve exact likeness throughout. No beautification. No deformation. Stable face throughout.`
+- Если загружается фото лица: `Use @Image1 as strict identity reference`.
+- Одежду описывай отдельно и детально.
+
+**[Структура промпта] — всегда в таком порядке:**
+1. Список всех `@`-референсов с описанием.
+2. Формат (16:9 или 9:16).
+3. Визуальный стиль и цветовая палитра.
+4. Описание локации и атмосферы.
+5. Сцены по шотам (действие + камера + движение).
+6. Реплики: перед каждой — эмоция + «говорит по-русски, без акцента», с ударениями.
 
 ---
 
-## 5. Универсальный промпт для сценариев
+## 5. Готовые Seedance 2.0 промпты (применение правил)
 
-Базовый шаблон под генерацию новых сценариев:
+> Загрузка: `@Image1` — фото лица/тела героини, `@Image2` — референс причёски
+> (корейские голливудские локоны). Для диалоговых сюжетов добавляем `@Image3` —
+> второй персонаж (подруга).
+
+### 5.1 Флагман «Слишком идеально» (9:16)
+
+**1. Референсы**
+- `@Image1 — exact face and body reference for the main character. Use @Image1 as strict identity reference.`
+- `@Image2 — hairstyle reference: soft Korean "hollywood-wave" curls, warm chocolate-brown, glossy, shoulder-length, framing the face.`
+- `Preserve exact likeness throughout. No beautification. No deformation. Stable face throughout.`
+
+**2. Формат:** 9:16 (вертикаль для reels/shorts).
+
+**3. Визуальный стиль и палитра:** кинематографично, 35mm film look, лёгкое зерно,
+тёплая пастельная палитра (крем, персик, тёплый беж), мягкий контровой свет.
+
+**4. Локация и атмосфера:** стильная бьюти-студия, панорамное окно, золотой час,
+плавающие пылинки в свете, ощущение эстетичного бьюти-влога.
+
+**5. Одежда:** кремовый оверсайз-свитер крупной вязки, минималистичные серёжки.
+
+**6. Сцены**
+- **Shot 1 (0–5s):** the woman stands by a large studio window, warm golden-hour
+  backlight on her hair, gently touches her curls, subtle confident smile to
+  camera. Slow push-in, 35mm, shallow depth of field.
+- **Shot 2 (5–10s):** a floor fan in the corner starts turning; one single curl on
+  the side of her head slowly lifts and floats sideways in the air stream while she
+  keeps smiling, unaware. Static medium shot, natural hair physics.
+- **Shot 3 (10–15s):** her curls dramatically swirl and rise upward in one
+  direction, forming a comical spiral; she freezes in her pose, eyes darting toward
+  her hair, forced-calm expression. Camera tilts up from face to floating hair.
+- **Shot 4 (15–20s):** she slowly presses the floating curl back down — it instantly
+  springs back up; she looks into camera with a resigned self-ironic half-smile and
+  a small shrug. Locked medium shot, punchline framing.
+
+**7. Реплика (финал, Shot 4)**
+- *(самоиронично, говорит по-русски, без акцента):*
+  «Коре́йская зави́вка. Де́ржится да́же про́тив зако́нов фи́зики.»
+
+**Подпись на видео:** «Корейская завивка: держится даже против законов физики 😐»
+
+### 5.2 Диалоговый «Сколько это стоило» (9:16)
+
+**1. Референсы**
+- `@Image1 — exact face and body reference for the main character (heroine). Use @Image1 as strict identity reference.`
+- `@Image2 — hairstyle reference: soft Korean "hollywood-wave" curls, warm chocolate-brown, glossy.`
+- `@Image3 — exact face and body reference for the friend (second character).`
+- `Preserve exact likeness throughout. No beautification. No deformation. Stable face throughout.`
+
+**2. Формат:** 9:16.
+
+**3. Визуальный стиль и палитра:** тёплый уютный кафе-лук, естественный дневной
+свет, мягкие бежево-карамельные тона, лёгкое кино-зерно.
+
+**4. Локация и атмосфера:** уютное городское кафе, столик у окна, две подруги за
+кофе; на флешбэке — интерьер салона и чек.
+
+**5. Одежда:** героиня — кремовый свитер; подруга — тёплый терракотовый кардиган.
+
+**6. Сцены**
+- **Shot 1 (0–4s):** hook — close-up: the friend reaches out and touches the
+  heroine's glossy curls, eyes wide. Handheld, shallow depth of field.
+- **Shot 2 (4–9s):** the heroine shifts uncomfortably, avoids eye contact, forced
+  little smile. Medium shot.
+- **Shot 3 (9–13s):** quick flashback cut — salon interior, then a printed receipt
+  in hand showing the amount **18 000 ₽**. Fast punch-in on the number.
+- **Shot 4 (13–18s):** back in the café — the friend narrows her eyes, silently
+  pulls out her phone and starts googling the price. The heroine sips coffee to
+  hide her face. Locked shot, comedic beat.
+
+**7. Реплики (с эмоцией, говорят по-русски, без акцента)**
+- Подруга *(удивлённо):* «Э́то у тебя́ своё́?!»
+- Героиня *(смущённо, уклончиво):* «Ну́… э́то инвести́ция в себя́.»
+- Подруга *(недове́рчиво, себе под нос):* «Ага́. Ща́с прове́рим.»
+
+**Подпись на видео:** «Почти от природы 💅»
+
+### 5.3 «Oompa Loompa» — ожидание/реальность процесса (9:16)
+
+**1. Референсы**
+- `@Image1 — exact face and body reference for the main character. Use @Image1 as strict identity reference.`
+- `@Image2 — hairstyle reference: soft Korean "hollywood-wave" curls, warm chocolate-brown, glossy (final look).`
+- `Preserve exact likeness throughout. No beautification. No deformation. Stable face throughout.`
+
+**2. Формат:** 9:16.
+
+**3. Визуальный стиль и палитра:** глянцевый бьюти-влог в начале (тёплые пастельные
+тона), затем резкий контраст на «сыром» этапе процесса; лёгкое кино-зерно.
+
+**4. Локация и атмосфера:** корейская бьюти-студия, завивочные аппараты с роликами
+и проводами, зеркала, тёплый свет.
+
+**5. Одежда:** героиня в салонной накидке поверх кремового свитера.
+
+**6. Сцены**
+- **Shot 1 (0–4s):** hook — glamorous vlog open: the woman poses in the salon,
+  aesthetic shot, aparatus in soft focus, confident smile. Smooth gimbal move.
+- **Shot 2 (4–9s):** voice-over line over the pretty footage (see reply below).
+- **Shot 3 (9–14s):** hard cut to mid-process — her hair sticks out in tiny tight
+  rings from the perm rods, comical volume, she stares at the mirror deadpan. Punch-in.
+- **Shot 4 (14–20s):** she slowly turns to camera with a "help me" face; on-screen
+  caption appears. Locked shot, comedic beat.
+
+**7. Реплики (с эмоцией, говорят по-русски, без акцента)**
+- Голос за кадром *(мечтательно):* «Я ду́мала, сейча́с вы́йду боги́ней…»
+- Героиня *(растерянно, глядя в зеркало):* «Никто́ не преду́предил про Э́ТОТ эта́п.»
+
+**Подпись на видео:** «Красота требует… терпения 🌀»
+
+### 5.4 «Все думают, я проснулась такой» — статус (9:16)
+
+**1. Референсы**
+- `@Image1 — exact face and body reference for the main character. Use @Image1 as strict identity reference.`
+- `@Image2 — hairstyle reference: soft Korean "hollywood-wave" curls, warm chocolate-brown, glossy.`
+- `@Image3 — exact face and body reference for the neighbour (second character).`
+- `Preserve exact likeness throughout. No beautification. No deformation. Stable face throughout.`
+
+**2. Формат:** 9:16.
+
+**3. Визуальный стиль и палитра:** утренний естественный свет в подъезде/у двери,
+тёплые бытовые тона; флешбэк — салонный тёплый свет.
+
+**4. Локация и атмосфера:** лестничная площадка/двор утром, затем короткий флешбэк
+в салон (аппараты, чек, ночь на подушке почти сидя).
+
+**5. Одежда:** героиня — casual утренний лук (пальто нараспашку, кофе в руке);
+сосед — куртка, спортивный вид.
+
+**6. Сцены**
+- **Shot 1 (0–4s):** hook — the woman steps out with flawless curls, catches her
+  reflection, effortless morning vibe. Handheld follow.
+- **Shot 2 (4–8s):** the neighbour passes by, glances, impressed. Medium two-shot.
+- **Shot 3 (8–14s):** fast flashback montage — 3 hours under perm apparatus, a
+  receipt, sleeping stiff and upright on a pillow. Quick cuts.
+- **Shot 4 (14–20s):** back to the morning — she gives a modest little shrug and a
+  knowing half-smile to camera. Locked shot.
+
+**7. Реплики (с эмоцией, говорят по-русски, без акцента)**
+- Сосед *(восхищённо):* «Ты вообще́ не пари́шься с укла́дкой!»
+- Героиня *(скромно, с лёгкой иронией):* «Ага́… само́ получи́лось.»
+
+**Подпись на видео:** «Само получилось… за 3 часа и один чек 😌»
+
+### 5.5 «Помыла раньше времени» — цепная реакция/уход (9:16)
+
+**1. Референсы**
+- `@Image1 — exact face and body reference for the main character. Use @Image1 as strict identity reference.`
+- `@Image2 — hairstyle reference: soft Korean "hollywood-wave" curls, warm chocolate-brown, glossy.`
+- `Preserve exact likeness throughout. No beautification. No deformation. Stable face throughout.`
+
+**2. Формат:** 9:16.
+
+**3. Визуальный стиль и палитра:** тёплый домашний вечер/ночь, мягкий свет ванной,
+затем синеватый ночной свет спальни; лёгкое кино-зерно.
+
+**4. Локация и атмосфера:** домашняя ванная, затем спальня с телефоном; настроение
+«лёгкая паника ночью».
+
+**5. Одежда:** уютный домашний халат/пижама.
+
+**6. Сцены**
+- **Shot 1 (0–4s):** hook — under the shower she absent-mindedly starts washing her
+  hair, then freezes mid-motion, eyes wide: "48 hours!". Close-up.
+- **Shot 2 (4–9s):** one curl visibly "goes limp" and loses shape; she panics,
+  hands on head. Handheld.
+- **Shot 3 (9–14s):** night call to the stylist — phone to ear, worried face, the
+  stylist's calm reply. Split-mood lighting.
+- **Shot 4 (14–20s):** later — she sets a phone alarm literally labelled «НЕ МЫТЬ»,
+  gives a tired thumbs-up to camera. Locked shot, comedic beat.
+
+**7. Реплики (с эмоцией, говорят по-русски, без акцента)**
+- Героиня *(в панике):* «Ой… со́рок во́семь часо́в!»
+- Мастер по телефону *(спокойно):* «Приходи́те, спасём.»
+- Героиня *(с облегчением, устало):* «Всё. Ста́влю буди́льник: не мы́ть.»
+
+**Подпись на видео:** «Первое правило завивки: 48 часов терпим 💧🚫»
+
+---
+
+## 6. Промпт на удержание персонажа (под систему референсов Seedance)
+
+Прогнать **один раз** отдельно как reference-описание и подставлять в блок «1.
+Референсы» каждого промпта — так лицо и волосы не будут меняться между сценами.
+
+> **@Image1 — strict identity reference for the main character.**
+> A 27-year-old woman, soft oval face, warm ivory skin, natural light makeup with
+> glossy lips, expressive dark-brown almond eyes, subtle self-ironic expression.
+> Hair: shoulder-length soft Korean-style "hollywood waves", warm chocolate-brown
+> with a glossy healthy shine, voluminous rounded curls framing the face.
+> Clothing (describe separately): cream oversized knit sweater, minimalist earrings.
+> **Rules:** Use @Image1 as strict identity reference. Preserve exact likeness
+> throughout. No beautification. No deformation. Stable face throughout. Same face
+> shape, same hair color and curl pattern, same outfit and lighting temperature in
+> every shot. Only expression and hair motion change between scenes. Photorealistic,
+> cinematic, 35mm film look.
+
+**Практический совет:** в Kling/Seedance используйте один и тот же reference-кадр
+из Шота 1 как Face Reference для остальных — надёжнее, чем только текст.
+
+---
+
+## 7. Универсальный промпт для сценариев
 
 > Придумай сценарий в жанре смешные короткие ролики про девушку-инфлюенсера с
 > идеальной корейской завивкой. Действие происходит в стильной студии красоты и
@@ -222,27 +423,27 @@
 
 ---
 
-## 6. План первой партии роликов
+## 8. План первой партии роликов
 
 Для баланса ленты берём по **одному** сюжету из каждой техники, чтобы источники
 конфликта были разные:
 
-| # | Сюжет | Техника | Источник конфликта | Зачем |
-|---|-------|---------|--------------------|-------|
-| 1 | 2.1 «Oompa Loompa» | Неожиданный поворот | Техника | Самый вирусный, реальный инсайт процесса |
-| 2 | 1.1 «Сколько это стоило» | Запретная тема | Деньги | Даёт споры в комментариях |
-| 3 | 4.4 «Все думают, я проснулась такой» | Неловкая ситуация | Гламур vs реальность | Максимально узнаваемо |
-| 4 | 3.2 «Помыла раньше времени» | Цепная реакция | Быт/каскад | Заодно обучает уходу |
+| # | Сюжет | Техника | Источник конфликта | Seedance-промпт |
+|---|-------|---------|--------------------|-----------------|
+| 1 | 2.1 «Oompa Loompa» | Неожиданный поворот | Техника | готов — 5.3 |
+| 2 | 1.1 «Сколько это стоило» | Запретная тема | Деньги | готов — 5.2 |
+| 3 | 4.4 «Все думают, я проснулась такой» | Неловкая ситуация | Гламур vs реальность | готов — 5.4 |
+| 4 | 3.2 «Помыла раньше времени» | Цепная реакция | Быт/каскад | готов — 5.5 |
 
-Флагман-ролик серии (эстетика + физическая комедия): **«Слишком идеально»**
-(раскадровка в разделе 3).
+Флагман серии (эстетика + физическая комедия): **«Слишком идеально»**
+(раскадровка — раздел 3, готовый Seedance-промпт — раздел 5.1).
+
+Итого готовых Seedance 2.0 промптов: **5** (флагман + вся первая партия).
 
 ---
 
-## 7. Следующие шаги
+## 9. Следующие шаги
 
-- Расписать любой сюжет **покадрово под Kling** (сцена + визуал + движение камеры
-  + эмоция) по образцу раздела 3.
-- Собрать **контент-план на неделю** — выстроить сюжеты в серию с общей героиней,
-  чтобы аудитория привыкала к персонажу.
-- Добить каждую технику через промпты (10 сюжетов на технику) и пополнить банк.
+- Прогнать промпт из 4.1 на банк персонажей и добить каждую технику до 10 сюжетов.
+- Собрать **Seedance-промпты** для второй партии (по одному новому из каждой техники).
+- Собрать **контент-план на неделю** с последовательностью выхода и общей героиней.

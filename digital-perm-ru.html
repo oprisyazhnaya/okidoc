@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<link href="fonts/web.css" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { background:#e9e9e9; }
+  .card{
+    width:1080px; height:1300px;
+    position:relative;
+    background:#f6f4ec;
+    background-image:
+      linear-gradient(rgba(180,180,170,.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(180,180,170,.16) 1px, transparent 1px);
+    background-size:26px 26px;
+    font-family:'NunitoRU',sans-serif;
+    color:#3a3a3a;
+    padding:34px 40px 20px;
+    overflow:hidden;
+  }
+  .title-wrap{ text-align:center; position:relative; margin-top:6px; }
+  .title{
+    display:inline-block;
+    font-family:'NunitoRU',sans-serif;
+    font-weight:800;
+    font-size:60px;
+    letter-spacing:1px;
+    color:#2c2c2c;
+    background:linear-gradient(transparent 58%, #f7c8d4 58%, #f7c8d4 92%, transparent 92%);
+    padding:0 14px;
+    line-height:1.1;
+  }
+  .spark{ position:absolute; font-size:34px; color:#f2b8c6; }
+  .handle{
+    text-align:center; font-family:'CaveatRU',cursive; font-weight:700;
+    font-size:32px; color:#6b6b6b; margin-top:2px;
+  }
+  h2{
+    font-family:'NunitoRU',sans-serif; font-weight:700;
+    font-size:27px; color:#2c2c2c; text-transform:uppercase;
+    margin:18px 0 8px; display:inline-block;
+    background:linear-gradient(transparent 60%, #f8d3dc 60%);
+    padding:0 6px 0 2px; letter-spacing:.5px;
+  }
+  .lead li{ list-style:none; font-size:20px; line-height:1.35; margin:3px 0; padding-left:22px; position:relative; }
+  .lead li::before{ content:"•"; position:absolute; left:4px; color:#e79aad; font-weight:800; }
+
+  /* process steps */
+  .steps{ display:flex; align-items:flex-start; justify-content:space-between; margin-top:6px; }
+  .step{ width:118px; text-align:center; position:relative; }
+  .arrow{ align-self:center; margin-top:22px; color:#b9b9b9; font-size:26px; }
+  .num{ width:34px;height:34px;border:2px solid #4a4a4a;border-radius:50%; display:flex;align-items:center;justify-content:center; margin:0 auto 6px; font-weight:800; font-size:18px; }
+  .icon{ font-size:40px; height:52px; line-height:52px; }
+  .step .name{ font-family:'NunitoRU',sans-serif; font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:.3px; margin-top:2px; }
+  .step .desc{ font-size:12.5px; color:#5a5a5a; line-height:1.2; margin-top:3px; }
+
+  /* science boxes */
+  .sci{ border:2px solid #4a4a4a; border-radius:14px; padding:16px 18px; display:flex; gap:14px; margin-top:4px; }
+  .sci .col{ flex:1; font-size:14.5px; line-height:1.3; }
+  .sci .h{ font-family:'NunitoRU',sans-serif; font-weight:700; font-size:17px; letter-spacing:.3px; }
+  .c-red{ color:#d98b8b;} .c-purple{ color:#a98cc4;} .c-green{ color:#8aae7a;}
+  .sci .sub{ color:#8a8a8a; font-weight:700; font-size:13px; }
+  .bond{ font-weight:800; color:#555; text-align:center; align-self:center; font-size:15px; }
+
+  /* cysteamine two-col */
+  .cyst{ border:1.6px dashed #e6a9b8; border-radius:14px; padding:14px 18px; display:flex; gap:20px; margin-top:14px; }
+  .cyst .left{ flex:1.55; } .cyst .right{ flex:1; }
+  .cyst .ttl{ font-family:'NunitoRU',sans-serif; font-weight:700; color:#c98aa0; font-size:16px; letter-spacing:.3px; }
+  .cyst ul{ list-style:none; }
+  .cyst .left li{ font-size:14px; line-height:1.3; padding-left:20px; position:relative; margin:4px 0;}
+  .cyst .left li::before{ content:"🌿"; position:absolute; left:0; font-size:12px;}
+  .cyst .right .ttl::before{ content:"💗 "; }
+  .cyst .right li{ font-size:14px; line-height:1.35; padding-left:20px; position:relative; margin:3px 0;}
+  .cyst .right li::before{ content:"✓"; position:absolute; left:2px; color:#8aae7a; font-weight:800;}
+
+  /* benefits + aftercare */
+  .two{ display:flex; gap:26px; margin-top:14px; position:relative; }
+  .two .col{ flex:1; }
+  .bene li{ list-style:none; font-size:15.5px; line-height:1.5; padding-left:26px; position:relative; }
+  .bene li::before{ content:"✅"; position:absolute; left:0; font-size:14px;}
+  .after li{ list-style:none; font-size:15.5px; line-height:1.5; padding-left:26px; position:relative; }
+  .after li::before{ content:"💗"; position:absolute; left:0; font-size:13px;}
+  .divider{ width:2px; background:repeating-linear-gradient(#c9c9c9 0 6px, transparent 6px 12px); }
+
+  .bubble{ position:absolute; right:2px; top:44px; width:150px; background:#eaf3e2; border:2px solid #c7d9b8; border-radius:16px; padding:10px 12px; font-family:'CaveatRU',cursive; font-weight:700; font-size:19px; color:#5f7a4e; line-height:1.15; text-align:center;}
+  .bubble::after{ content:""; position:absolute; left:24px; bottom:-12px; border:8px solid transparent; border-top-color:#eaf3e2;}
+
+  .footer{ margin-top:16px; background:#eaf3e2; border-radius:14px; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; font-family:'CaveatRU',cursive; font-weight:700; font-size:23px; color:#5f7a4e;}
+  .footer .heart{ color:#e79aad; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="title-wrap">
+    <span class="spark" style="left:150px;top:-6px;">✦</span>
+    <span class="spark" style="left:120px;top:34px;font-size:22px;">✧</span>
+    <div class="title">КАК РАБОТАЕТ ЦИФРОВАЯ ЗАВИВКА</div>
+    <span class="spark" style="right:150px;top:-8px;">✦</span>
+    <span class="spark" style="right:130px;top:32px;font-size:22px;">✧</span>
+  </div>
+  <div class="handle">@oksana.prisyazhnaya</div>
+
+  <h2>Что такое цифровая завивка?</h2>
+  <ul class="lead">
+    <li>Цифровая завивка создаёт идеальный баланс локона, объёма и подвижности, бережно ухаживая за волосами.</li>
+    <li>Она даёт стойкий и естественный результат — с меньшим повреждением и большей гибкостью.</li>
+  </ul>
+
+  <h2>Этапы цифровой завивки</h2>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div class="icon">💧</div><div class="name">Диагностика</div><div class="desc">Оценка состояния волос</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">2</div><div class="icon">〰️</div><div class="name">Подготовка</div><div class="desc">Раскрытие кутикулы и увлажнение</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">3</div><div class="icon">🎗️</div><div class="name">Накрутка</div><div class="desc">Точное формирование локона</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">4</div><div class="icon">🌡️</div><div class="name">Нагрев</div><div class="desc">Тепло для памяти формы</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">5</div><div class="icon">⏱️</div><div class="name">Фиксация</div><div class="desc">Закрепление локона</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">6</div><div class="icon">💠</div><div class="name">Охлаждение</div><div class="desc">Стабилизация и закрытие кутикулы</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="num">7</div><div class="icon">🧴</div><div class="name">Завершение</div><div class="desc">Восстановление pH и защита</div></div>
+  </div>
+
+  <h2>Наука цифровой завивки</h2>
+  <div class="sci">
+    <div class="col">
+      <div class="h c-red">ВОССТАНОВЛЕНИЕ (РАЗМЯГЧЕНИЕ)</div>
+      <div class="sub">(ЦИСТЕАМИН)</div>
+      Разрывает дисульфидные связи (S–S), размягчая волос и делая его гибким.
+    </div>
+    <div class="bond">S–S&nbsp;→&nbsp;SH</div>
+    <div class="col">
+      <div class="h c-purple">ФИКСАЦИЯ</div>
+      Восстанавливает дисульфидные связи в новой форме, закрепляя локон.
+    </div>
+    <div class="col">
+      <div class="h c-green">СТАБИЛИЗАЦИЯ</div>
+      Укрепляет и защищает волос, балансируя pH для стойкого результата.
+    </div>
+  </div>
+
+  <div class="cyst">
+    <div class="left">
+      <div class="ttl">О ЦИСТЕАМИНЕ (размягчающий агент)</div>
+      <ul>
+        <li>Мягкий современный агент вместо традиционной тиогликолевой кислоты.</li>
+        <li>Минимизирует повреждение при отличном результате завивки.</li>
+        <li>Безопасен для чувствительной кожи головы и повреждённых волос.</li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="ttl">Почему цистеамин?</div>
+      <ul>
+        <li>Меньше запаха</li>
+        <li>Меньше раздражения</li>
+        <li>Лучший уходовый эффект</li>
+        <li>Более естественные, стойкие локоны</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="col">
+      <h2>Преимущества</h2>
+      <ul class="bene">
+        <li>Естественная подвижность и мягкие локоны</li>
+        <li>Стойкий результат (2–4 месяца)</li>
+        <li>Объём от корней</li>
+        <li>Лёгкая укладка и простой уход</li>
+        <li>Индивидуальный дизайн под форму лица</li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <h2>Уход после процедуры</h2>
+      <ul class="after">
+        <li>Не мойте голову 48 часов</li>
+        <li>Мягкий шампунь и уход</li>
+        <li>Маска для волос 1–2 раза в неделю</li>
+        <li>Сушите корни перед сном</li>
+        <li>Стайлеры — на низкой температуре</li>
+      </ul>
+    </div>
+    <div class="bubble">Здоровые волосы — <span style="color:#e79aad;">лучший стиль!</span></div>
+  </div>
+
+  <div class="footer">
+    <span>✦ Наука + Дизайн = Ваши лучшие волосы <span class="heart">♡</span></span>
+    <span>Пишите в директ для консультации и записи ✉️</span>
+  </div>
+</div>
+</body>
+</html>
